@@ -1,6 +1,6 @@
 Welcome to elementary_math Documentation
 ========================================
-
+This is just a example project for demonstration purpose.
 
 
 **Quick Links**
@@ -10,7 +10,7 @@ Welcome to elementary_math Documentation
 - `PyPI download <https://pypi.python.org/pypi/elementary_math>`_
 - `Install <install_>`_
 - `Issue submit and feature request <https://github.com/MacHu-GWU/elementary_math-project/issues>`_
-- `API reference and source code <http://pythonhosted.org/elementary_math>`_
+- `API reference and source code <http://pythonhosted.org/elementary_math/py-modindex.html>`_
 
 
 .. _install:
@@ -27,5 +27,5 @@ Install
 To upgrade to latest version:
 
 .. code-block:: console
-	
+
 	$ pip install --upgrade elementary_math

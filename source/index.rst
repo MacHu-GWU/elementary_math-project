@@ -1,10 +1,10 @@
-Welcome to elementary_math's documentation!
-===========================================
+.. include:: ../readme.rst
 
-This is just a example package. 
+Table of Content
+================
+:ref:`API Reference <modindex>`
 
-Here is :ref:`API Reference <modindex>`.
-
+.. include:: about.rst
 
 Indices and tables
 ==================
