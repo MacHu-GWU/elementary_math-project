@@ -1,3 +1,12 @@
+.. image:: https://travis-ci.org/MacHu-GWU/elementary_math-project.svg?branch=master
+
+.. image:: https://img.shields.io/pypi/v/elementary_math.svg
+
+.. image:: https://img.shields.io/pypi/l/elementary_math.svg
+
+.. image:: https://img.shields.io/pypi/pyversions/elementary_math.svg
+
+
 Welcome to elementary_math Documentation
 ========================================
 This is just a example project for demonstration purpose.

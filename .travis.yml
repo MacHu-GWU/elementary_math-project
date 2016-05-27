@@ -5,9 +5,6 @@ python:
   - "3.3"
   - "3.4"
   - "3.5"
-os:
-  - linux
-  - osx
 install:
   - pip install . # Install it self
 script: py.test
