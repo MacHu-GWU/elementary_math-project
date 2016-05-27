@@ -1,0 +1,2 @@
+include README.rst LICENSE.txt requirements.txt release_history.rst
+recursive-include {{ package_name }} *.*
