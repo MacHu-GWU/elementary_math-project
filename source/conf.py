@@ -17,6 +17,7 @@ import sys
 import os
 import shlex
 import elementary_math
+from datetime import date
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -59,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'elementary_math'
-copyright = '2016, Sanhe Hu'
+copyright = '%s, Sanhe Hu' % date.today().year
 author = 'Sanhe Hu'
 
 # The version info for the project you're documenting, acts as replacement for
