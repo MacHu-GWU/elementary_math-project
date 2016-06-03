@@ -19,7 +19,7 @@ This is just a example project for demonstration purpose.
 - `PyPI download <https://pypi.python.org/pypi/elementary_math>`_
 - `Install <install_>`_
 - `Issue submit and feature request <https://github.com/MacHu-GWU/elementary_math-project/issues>`_
-- `API reference and source code <http://pythonhosted.org/elementary_math/py-modindex.html>`_
+- `API reference and source code <http://elementary-math.readthedocs.io/py-modindex.html>`_
 
 
 .. _install:
