@@ -26,10 +26,10 @@ except:
     LONG_DESCRIPTION = "No long description!"
 
 VERSION = __import__(NAME).__version__
-AUTHOR = "Sanhe Hu"
-AUTHOR_EMAIL = "husanhe@gmail.com"
-MAINTAINER = "Sanhe Hu"
-MAINTAINER_EMAIL = "husanhe@gmail.com"
+AUTHOR = "{{ author_name }}"
+AUTHOR_EMAIL = "{{ author_email }}"
+MAINTAINER = "{{ author_name }}"
+MAINTAINER_EMAIL = "{{ author_email }}"
 
 # Include all sub packages in package directory
 PACKAGES = [NAME] + ["%s.%s" % (NAME, i) for i in find_packages(NAME)]

@@ -5,11 +5,15 @@
 This script can generate automate scripts for open source python project.
 """
 
+import datetime
 from os.path import join, basename
 
 package_name = "elementary_math"
 python_version = "python"
 github_username = "MacHu-GWU"
+author_name = "Sanhe Hu"
+author_email = "husanhe@gmail.com"
+year = str(datetime.date.today().year)
 
 
 def write(s, path, encoding="utf-8"):
@@ -49,6 +53,9 @@ for path in file_list:
     text = read(path).\
         replace("{{ package_name }}", package_name).\
         replace("{{ python_version }}", python_version).\
-        replace("{{ github_username }}", github_username)
+        replace("{{ github_username }}", github_username).\
+        replace("{{ author_name }}", author_name).\
+        replace("{{ author_email }}", author_email).\
+        replace("{{ year }}", year)
     path = basename(path)
     write(text, path)
