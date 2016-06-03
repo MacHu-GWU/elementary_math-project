@@ -1,25 +1,25 @@
-.. image:: https://travis-ci.org/MacHu-GWU/uszipcode-project.svg?branch=master
+.. image:: https://travis-ci.org/MacHu-GWU/elementary_math-project.svg?branch=master
 
-.. image:: https://img.shields.io/pypi/v/uszipcode.svg
+.. image:: https://img.shields.io/pypi/v/elementary_math.svg
 
-.. image:: https://img.shields.io/pypi/l/uszipcode.svg
+.. image:: https://img.shields.io/pypi/l/elementary_math.svg
 
-.. image:: https://img.shields.io/pypi/pyversions/uszipcode.svg
+.. image:: https://img.shields.io/pypi/pyversions/elementary_math.svg
 
 
-Welcome to uszipcode Documentation
+Welcome to elementary_math Documentation
 ========================================
 This is just a example project for demonstration purpose.
 
 
 **Quick Links**
 -------------------------------------------------------------------------------
-- `GitHub Homepage <https://github.com/MacHu-GWU/uszipcode-project>`_
-- `Online Documentation <http://pythonhosted.org/uszipcode>`_
-- `PyPI download <https://pypi.python.org/pypi/uszipcode>`_
+- `GitHub Homepage <https://github.com/MacHu-GWU/elementary_math-project>`_
+- `Online Documentation <http://elementary-math.readthedocs.io/>`_
+- `PyPI download <https://pypi.python.org/pypi/elementary_math>`_
 - `Install <install_>`_
-- `Issue submit and feature request <https://github.com/MacHu-GWU/uszipcode-project/issues>`_
-- `API reference and source code <http://pythonhosted.org/uszipcode/py-modindex.html>`_
+- `Issue submit and feature request <https://github.com/MacHu-GWU/elementary_math-project/issues>`_
+- `API reference and source code <http://pythonhosted.org/elementary_math/py-modindex.html>`_
 
 
 .. _install:
@@ -27,14 +27,25 @@ This is just a example project for demonstration purpose.
 Install
 -------------------------------------------------------------------------------
 
-``uszipcode`` is released on PyPI, so all you need is:
+``elementary_math`` is released on PyPI, so all you need is:
 
 .. code-block:: console
 
-	$ pip install uszipcode
+	$ pip install elementary_math
 
 To upgrade to latest version:
 
 .. code-block:: console
 
-	$ pip install --upgrade uszipcode
+	$ pip install --upgrade elementary_math
+
+
+.. include:: about.rst
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

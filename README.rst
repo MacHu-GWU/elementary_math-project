@@ -15,7 +15,7 @@ This is just a example project for demonstration purpose.
 **Quick Links**
 -------------------------------------------------------------------------------
 - `GitHub Homepage <https://github.com/MacHu-GWU/elementary_math-project>`_
-- `Online Documentation <http://pythonhosted.org/elementary_math>`_
+- `Online Documentation <http://elementary-math.readthedocs.io/>`_
 - `PyPI download <https://pypi.python.org/pypi/elementary_math>`_
 - `Install <install_>`_
 - `Issue submit and feature request <https://github.com/MacHu-GWU/elementary_math-project/issues>`_
