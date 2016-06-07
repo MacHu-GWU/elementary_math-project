@@ -2,11 +2,12 @@ mul
 ===
 
 .. automodule:: elementary_math.mul
-	:members:
+    :members:
 
-subpackage and modules
-----------------------
+sub packages and modules
+------------------------
 
 .. toctree::
    :maxdepth: 1
 
+    

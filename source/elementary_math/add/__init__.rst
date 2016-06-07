@@ -2,11 +2,12 @@ add
 ===
 
 .. automodule:: elementary_math.add
-	:members:
+    :members:
 
-subpackage and modules
-----------------------
+sub packages and modules
+------------------------
 
 .. toctree::
    :maxdepth: 1
 
+    

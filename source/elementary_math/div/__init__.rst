@@ -2,11 +2,12 @@ div
 ===
 
 .. automodule:: elementary_math.div
-	:members:
+    :members:
 
-subpackage and modules
-----------------------
+sub packages and modules
+------------------------
 
 .. toctree::
    :maxdepth: 1
 
+    

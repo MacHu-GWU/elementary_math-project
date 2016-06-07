@@ -2,11 +2,12 @@ sub
 ===
 
 .. automodule:: elementary_math.sub
-	:members:
+    :members:
 
-subpackage and modules
-----------------------
+sub packages and modules
+------------------------
 
 .. toctree::
    :maxdepth: 1
 
+    
