@@ -14,6 +14,5 @@ sub packages and modules
     div <div/__init__>
     mul <mul/__init__>
     sub <sub/__init__>
-    operator <operator>
-    zzz_manual_install <zzz_manual_install>
+    operators <operators>
     
