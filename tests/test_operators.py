@@ -10,10 +10,10 @@ from pytest import approx
 from elementary_math import operators
 
 def test_operator():
-    assert operator.add_other(1, 2) == 3
-    assert operator.minus_other(3, 2) == 1
-    assert operator.times(2, 3) == 6
-    assert operator.divide_by(6, 3) == approx(2.0)
+    assert operators.add_other(1, 2) == 3
+    assert operators.minus_other(3, 2) == 1
+    assert operators.times(2, 3) == 6
+    assert operators.divide_by(6, 3) == approx(2.0)
 
 if __name__ == "__main__":
     import os
