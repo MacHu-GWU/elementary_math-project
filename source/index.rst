@@ -13,7 +13,7 @@ This is just a example project for demonstration purpose.
 
 
 **Quick Links**
--------------------------------------------------------------------------------
+---------------
 - `GitHub Homepage <https://github.com/MacHu-GWU/elementary_math-project>`_
 - `Online Documentation <http://elementary-math.readthedocs.io/>`_
 - `PyPI download <https://pypi.python.org/pypi/elementary_math>`_
@@ -25,7 +25,7 @@ This is just a example project for demonstration purpose.
 .. _install:
 
 Install
--------------------------------------------------------------------------------
+-------
 
 ``elementary_math`` is released on PyPI, so all you need is:
 
@@ -42,10 +42,10 @@ To upgrade to latest version:
 
 .. include:: about.rst
 
+
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

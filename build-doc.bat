@@ -1,6 +1,6 @@
 pushd "%~dp0"
 cd elementary_math
-python zzz_manual_install.py
+python34 zzz_manual_install.py
 cd ..
-python create_doctree.py
+python34 create_doctree.py
 make html

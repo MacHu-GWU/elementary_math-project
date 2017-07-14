@@ -8,8 +8,8 @@ This script can generate automate scripts for open source python project.
 import datetime
 from os.path import join, basename
 
-package_name = "elementary_math"
-python_version = "python"
+package_name = "cazipcode"
+python_version = "python3"
 github_username = "MacHu-GWU"
 author_name = "Sanhe Hu"
 author_email = "husanhe@gmail.com"
@@ -40,6 +40,7 @@ file_list = [
     "view-doc.bat",
     "MANIFEST.in",
     "create_doctree.py",
+    "fixcode.py",
     "setup.py",
     "README.rst",
     "release-history.rst",
