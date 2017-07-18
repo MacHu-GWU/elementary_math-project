@@ -46,6 +46,8 @@ def generate_files():
         for basename in file_list:
             src = join(current_dir, basename)
             dst = src.replace(template_dir, output_dir)
+            if dst.endswith(".python"):
+                dst = dst[:-7] + ".py"
 
             content = read(src).\
                 replace("{{ package_name }}", package_name).\
