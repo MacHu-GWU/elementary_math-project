@@ -17,6 +17,7 @@ github_username = "MacHu-GWU"
 author_name = "Sanhe Hu"
 author_email = "husanhe@gmail.com"
 year = str(datetime.datetime.utcnow().year)
+s3_bucket = "www.wbh-doc.com"
 
 
 def write(s, path, encoding="utf-8"):
@@ -61,7 +62,8 @@ def generate_files():
                 replace("{{ github_username }}", github_username).\
                 replace("{{ author_name }}", author_name).\
                 replace("{{ author_email }}", author_email).\
-                replace("{{ year }}", year)
+                replace("{{ year }}", year).\
+                replace("{{ s3_bucket }}", s3_bucket)
             write(content, dst)
 
 
