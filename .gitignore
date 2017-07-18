@@ -1,3 +1,7 @@
+# User Settings
+elementary_math.egg-info
+start-a-project/elementary_math-project
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

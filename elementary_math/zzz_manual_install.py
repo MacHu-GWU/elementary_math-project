@@ -95,7 +95,8 @@ def find_venv_DST():
         DST = os.path.join(dir_path, "Lib", "site-packages", PKG_NAME)
     elif SYS_NAME in ["Darwin", "Linux"]:
         python_version = find_linux_venv_py_version()
-        DST = os.path.join(dir_path, "lib", python_version, "site-packages", PKG_NAME)
+        DST = os.path.join(dir_path, "lib", python_version,
+                           "site-packages", PKG_NAME)
 
     return DST
 

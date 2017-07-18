@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-+, -, *, / operator function.
+``+, -, *, /`` operator function.
 """
 
-from .add import add_other
-from .sub import minus_other
-from .mul import times
-from .div import divide_by
+from .add import *
+from .sub import *
+from .mul import *
+from .div import *
