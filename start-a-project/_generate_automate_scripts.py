@@ -36,19 +36,25 @@ def read(path, encoding="utf-8"):
 def generate_files():
     template_dir = join(dirname(abspath(__file__)), "template")
     output_dir = join(dirname(abspath(__file__)), "%s-project" % package_name)
-    for current_dir, dir_list, file_list in walk(template_dir):
-        path = current_dir.replace(template_dir, output_dir)
+    for src_dir, dir_list, file_list in walk(template_dir):
+        # destination directory
+        dst_dir = src_dir.replace(template_dir, output_dir, 1)
+        if dst_dir.endswith("__package__"):
+            dst_dir = dst_dir[:-11] + package_name
+        
+        # make destination directory
         try:
-            mkdir(path)
+            mkdir(dst_dir)
         except:
             pass
 
+        # files
         for basename in file_list:
-            src = join(current_dir, basename)
-            dst = src.replace(template_dir, output_dir)
+            src = join(src_dir, basename)
+            dst = join(dst_dir, basename)
             if dst.endswith(".python"):
                 dst = dst[:-7] + ".py"
-
+            
             content = read(src).\
                 replace("{{ package_name }}", package_name).\
                 replace("{{ python_version }}", python_version).\

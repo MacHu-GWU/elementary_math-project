@@ -5,7 +5,7 @@ pushd %~dp0
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=python -msphinx
+	set SPHINXBUILD=python34 -msphinx
 )
 set SOURCEDIR=source
 set BUILDDIR=build
