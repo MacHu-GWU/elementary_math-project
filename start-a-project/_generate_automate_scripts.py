@@ -11,11 +11,13 @@ from os import walk, mkdir
 from os.path import join, abspath, dirname, basename, relpath
 
 
-package_name = "elementary_math"
+package_name = "ezinstall"
 python_version = "python%s%s" % (sys.version_info.major, sys.version_info.minor)
 github_username = "MacHu-GWU"
 author_name = "Sanhe Hu"
 author_email = "husanhe@gmail.com"
+maintainer_name = author_name
+maintainer_email = author_email
 year = str(datetime.datetime.utcnow().year)
 s3_bucket = "www.wbh-doc.com"
 
@@ -62,6 +64,8 @@ def generate_files():
                 replace("{{ github_username }}", github_username).\
                 replace("{{ author_name }}", author_name).\
                 replace("{{ author_email }}", author_email).\
+                replace("{{ maintainer_name }}", maintainer_name).\
+                replace("{{ maintainer_email }}", maintainer_email).\
                 replace("{{ year }}", year).\
                 replace("{{ s3_bucket }}", s3_bucket)
             write(content, dst)

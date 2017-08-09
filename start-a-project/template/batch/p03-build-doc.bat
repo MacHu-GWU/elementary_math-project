@@ -4,7 +4,7 @@ cd ..
 
 REM install the package
 cd {{ package_name }}
-{{ python_version }} zzz_manual_install.py
+{{ python_version }} zzz_ezinstall.py
 
 REM create doc tree
 cd ..

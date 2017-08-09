@@ -2,37 +2,62 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-from setuptools import setup, find_packages
-from datetime import date
 import os
+from datetime import date
+from setuptools import setup, find_packages
 
-#--- Define project dependent variable ---
-# Your package name
-NAME = "elementary_math"
-# Your GitHub user name
-GITHUB_USERNAME = "MacHu-GWU" # your GitHub account name
+#--- import your package ---
+import elementary_math as package
 
 
 #--- Automatically generate setup parameters ---
+# Your package name
+PKG_NAME = package.__name__
+
+# Your GitHub user name
+GITHUB_USERNAME = package.__github_username__
+
+# Short description will be the description on PyPI
 try:
-    SHORT_DESCRIPTION = __import__(NAME).__short_description__ # GitHub Short Description
+    SHORT_DESCRIPTION = package.__short_description__  # GitHub Short Description
 except:
-    print("'__short_description__' not found in '%s.__init__.py'!" % NAME)
+    print("'__short_description__' not found in '%s.__init__.py'!" % PKG_NAME)
     SHORT_DESCRIPTION = "No short description!"
-    
+
+# Long description will be the body of content on PyPI page
 try:
     LONG_DESCRIPTION = open("README.rst", "rb").read().decode("utf-8")
 except:
     LONG_DESCRIPTION = "No long description!"
 
-VERSION = __import__(NAME).__version__
-AUTHOR = "Sanhe Hu"
-AUTHOR_EMAIL = "husanhe@gmail.com"
-MAINTAINER = "Sanhe Hu"
-MAINTAINER_EMAIL = "husanhe@gmail.com"
+# Version number, VERY IMPORTANT!
+VERSION = package.__version__
+
+# Author and Maintainer
+try:
+    AUTHOR = package.__author__
+except:
+    AUTHOR = "Unknown"
+
+try:
+    AUTHOR_EMAIL = package.__author_email__
+except:
+    AUTHOR_EMAIL = "Unknown"
+
+try:
+    MAINTAINER = package.__maintainer__
+except:
+    MAINTAINER = "Unknown"
+
+try:
+    MAINTAINER_EMAIL = package.__maintainer_email__
+except:
+    MAINTAINER_EMAIL = "Unknown"
 
 # Include all sub packages in package directory
-PACKAGES = [NAME] + ["%s.%s" % (NAME, i) for i in find_packages(NAME)]
+PACKAGES = [PKG_NAME] + ["%s.%s" % (PKG_NAME, i)
+                         for i in find_packages(PKG_NAME)]
+
 # Include everything in package directory
 INCLUDE_PACKAGE_DATA = True
 PACKAGE_DATA = {
@@ -40,7 +65,8 @@ PACKAGE_DATA = {
 }
 
 # The project directory name is the GitHub repository name
-repository_name = os.path.basename(os.getcwd())
+repository_name = os.path.basename(os.path.dirname(__file__))
+
 # Project Url
 URL = "https://github.com/{0}/{1}".format(GITHUB_USERNAME, repository_name)
 # Use todays date as GitHub release tag
@@ -50,12 +76,17 @@ DOWNLOAD_URL = "https://github.com/{0}/{1}/tarball/{2}".format(
     GITHUB_USERNAME, repository_name, github_release_tag)
 
 try:
-    LICENSE = __import__(NAME).__license__
+    LICENSE = package.__license__
 except:
-    print("'__license__' not found in '%s.__init__.py'!" % NAME)
+    print("'__license__' not found in '%s.__init__.py'!" % PKG_NAME)
     LICENSE = ""
 
-PLATFORMS = ["Windows", "MacOS", "Unix"]
+PLATFORMS = [
+    "Windows",
+    "MacOS",
+    "Unix",
+]
+
 CLASSIFIERS = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -66,9 +97,9 @@ CLASSIFIERS = [
     "Operating System :: Unix",
     "Programming Language :: Python",
     "Programming Language :: Python :: 2.7",
-    "Programming Language :: Python :: 3.3",
     "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
 ]
 
 try:
@@ -79,7 +110,7 @@ except:
     REQUIRES = list()
 
 setup(
-    name=NAME,
+    name=PKG_NAME,
     description=SHORT_DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     version=VERSION,
@@ -145,8 +176,9 @@ Frequent used classifiers List = [
     "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: 2 :: Only",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.3",
     "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3 :: Only",
 ]
 """

@@ -4,7 +4,7 @@ cd ..
 
 REM install the package
 cd elementary_math
-python34 zzz_manual_install.py
+python34 zzz_ezinstall.py
 
 REM create doc tree
 cd ..
