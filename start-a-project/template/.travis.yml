@@ -3,10 +3,11 @@ python:
   - "2.7"
   - "3.4"
   - "3.5"
+  - "3.6"
 install:
   - pip install . # Install it self
   - pip install --upgrade pytest # Upgrade pytest to lastest
-script: py.test
+script: py.test tests
 notifications:
   slack:
     on_success: never

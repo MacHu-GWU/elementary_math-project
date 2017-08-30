@@ -40,7 +40,7 @@
 
 
 #--- User Defined Variable ---
-PACKAGE_NAME="elementary_math"
+PACKAGE_NAME="{{ package_name }}"
 
 # Python Version
 PY_VER_MAJOR="2"

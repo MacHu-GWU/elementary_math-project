@@ -6,7 +6,7 @@ elementary_path unittest.
 """
 
 import pytest
-from pytest import approx
+from pytest import raises, approx
 from elementary_math import operators
 
 
@@ -19,4 +19,6 @@ def test_operator():
 
 if __name__ == "__main__":
     import os
-    pytest.main([os.path.basename(__file__), "--tb=native", "-s", ])
+
+    basename = os.path.basename(__file__)
+    pytest.main([basename, "-s", "--tb=native"])

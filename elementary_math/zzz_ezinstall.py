@@ -1,6 +1,8 @@
-# content of zzz_ezinstall.py
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 if __name__ == "__main__":
+    import os
     from ezinstall import install
 
-    install(__file__)
+    install(os.path.dirname(__file__))

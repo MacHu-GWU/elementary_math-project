@@ -3,4 +3,5 @@
 
 if __name__ == "__main__":
     import pytest
-    pytest.main(["--tb=native", "-s"])
+
+    pytest.main(["-s", "--tb=native"])
