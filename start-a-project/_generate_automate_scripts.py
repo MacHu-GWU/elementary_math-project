@@ -12,7 +12,7 @@ from os import walk, mkdir
 from os.path import join, abspath, dirname, basename
 
 
-package_name = "docfly"
+package_name = "learn_coverage"
 python_version = "python%s%s" % (sys.version_info.major, sys.version_info.minor)
 github_username = "MacHu-GWU"
 author_name = "Sanhe Hu"
