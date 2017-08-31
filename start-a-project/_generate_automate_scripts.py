@@ -12,7 +12,8 @@ from os import walk, mkdir
 from os.path import join, abspath, dirname, basename
 
 
-package_name = "learn_coverage"
+package_name = "elementary_math"
+repo_name = "{package_name}-project".format(package_name=package_name)
 python_version = "python%s%s" % (sys.version_info.major, sys.version_info.minor)
 github_username = "MacHu-GWU"
 author_name = "Sanhe Hu"
@@ -65,6 +66,7 @@ def generate_files():
 
             content = read(src).\
                 replace("{{ package_name }}", package_name).\
+                replace("{{ repo_name }}", repo_name).\
                 replace("{{ python_version }}", python_version).\
                 replace("{{ github_username }}", github_username).\
                 replace("{{ author_name }}", author_name).\

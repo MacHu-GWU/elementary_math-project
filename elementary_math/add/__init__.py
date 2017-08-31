@@ -28,9 +28,3 @@ def add_four(a):
     """Return a + 4.
     """
     return a + 4
-
-
-def add_five(a):
-    """Return a + 5.
-    """
-    return a + 5

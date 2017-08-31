@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-Elementary Math Library. (For demonstration purpose only) 
+Elementary Math Library. (For demonstration purpose only)
 """
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 __short_description__ = "Elementary Mathematics."
 __license__ = "MIT"
 __author__ = "Sanhe Hu"

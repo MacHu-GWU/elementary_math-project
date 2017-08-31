@@ -20,6 +20,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from __future__ import unicode_literals
 from datetime import datetime
 import {{ package_name }}
 
@@ -56,9 +57,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'{{ package_name }}'
-copyright = u'%s, Sanhe Hu' % datetime.utcnow().year
-author = u'Sanhe Hu'
+project = '{{ package_name }}'
+copyright = '%s, Sanhe Hu' % datetime.utcnow().year
+author = 'Sanhe Hu'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -154,7 +155,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, '{{ package_name }}.tex', u'{{ package_name }} Documentation',
+    (master_doc, '{{ package_name }}.tex', '{{ package_name }} Documentation',
      u'Sanhe Hu', 'manual'),
 ]
 
@@ -164,7 +165,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '{{ package_name }}', u'{{ package_name }} Documentation',
+    (master_doc, '{{ package_name }}', '{{ package_name }} Documentation',
      [author], 1)
 ]
 
@@ -175,7 +176,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, '{{ package_name }}', u'{{ package_name }} Documentation',
+    (master_doc, '{{ package_name }}', '{{ package_name }} Documentation',
      author, '{{ package_name }}', 'One line description of project.',
      'Miscellaneous'),
 ]

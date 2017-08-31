@@ -110,6 +110,7 @@ clean: ## Clean Up Virtual Environment
 #--- Install ---
 .POHNY: install
 install: ## Install This Package via setup.py
+	${BIN_PIP} uninstall -y ${PACKAGE_NAME}
 	${BIN_PIP} install --ignore-installed .
 
 .PHONY: enstall
@@ -122,6 +123,11 @@ enstall: ## Install This Package in Editable Mode
 test: install ## Run test
 	${BIN_PIP} install pytest
 	${BIN_PYTEST} tests -s
+
+.PHONY: cov
+cov: enstall ## Run Code Coverage test
+	${BIN_PIP} install pytest-cov
+	${BIN_PYTEST} tests -s --cov=${PACKAGE_NAME}
 
 .PHONY: tox
 tox: ## Run tox

@@ -1,0 +1,4 @@
+[run]
+omit =
+    elementary_math/pkg/*
+    elementary_math/zzz_ezinstall.py

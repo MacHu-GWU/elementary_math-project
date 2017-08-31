@@ -5,10 +5,15 @@ python:
   - "3.5"
   - "3.6"
 install:
-  - pip install . # Install it self
+  - pip install --editable . # Install it self
   - pip install --upgrade pytest # Upgrade pytest to lastest
-script: py.test tests
+  - pip install --upgrade pytest-cov # Upgrade pytest-cov to latest
+  - pip install coveralls # Install coverall
+script:
+  - pytest tests --cov=learn_coverage
 notifications:
   slack:
     on_success: never
     on_failure: never
+after_success:
+  coveralls
