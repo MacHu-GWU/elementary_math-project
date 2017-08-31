@@ -10,7 +10,7 @@ install:
   - pip install --upgrade pytest-cov # Upgrade pytest-cov to latest
   - pip install coveralls # Install coverall
 script:
-  - pytest tests --cov=learn_coverage
+  - pytest tests --cov={{ package_name }}
 notifications:
   slack:
     on_success: never
