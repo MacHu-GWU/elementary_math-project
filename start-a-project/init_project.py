@@ -12,16 +12,17 @@ from os import walk, mkdir
 from os.path import join, abspath, dirname, basename
 
 
-package_name = "elementary_math"
+#--- EDIT THESE VARIABLE based on your own situation ---
+package_name = "pathlib_mate" # IMPORTANT
 repo_name = "{package_name}-project".format(package_name=package_name)
 python_version = "python%s%s" % (sys.version_info.major, sys.version_info.minor)
-github_username = "MacHu-GWU"
-author_name = "Sanhe Hu"
-author_email = "husanhe@gmail.com"
+github_username = "MacHu-GWU" # IMPORTANT
+author_name = "Sanhe Hu" # IMPORTANT
+author_email = "husanhe@gmail.com" # IMPORTANT
 maintainer_name = author_name
 maintainer_email = author_email
 year = str(datetime.datetime.utcnow().year)
-s3_bucket = "www.wbh-doc.com"
+s3_bucket = "www.wbh-doc.com" # IMPORTANT
 
 
 def write(s, path, encoding="utf-8"):

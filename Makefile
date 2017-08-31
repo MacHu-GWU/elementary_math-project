@@ -72,13 +72,19 @@ VENV_DIR_REAL="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}"
 VENV_DIR_LINK="${HOME}/.pyenv/versions/${VENV_NAME}"
 
 S3_PREFIX="s3://${BUCKET_NAME}/${PACKAGE_NAME}"
-
+DOC_URL="http://${BUCKET_NAME}.s3.amazonaws.com/${PACKAGE_NAME}/index.html"
 
 .PHONY: help
 help: ## Show this help message
 	@perl -nle'print $& if m{^[a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 #--- Make Commands ---
+.PHONY: info
+info: ## Show information about python, pip in this environment
+	@echo - python executable: ${BIN_PYTHON}
+	@echo - pip executable: ${BIN_PIP}
+	@echo - document: ${DOC_URL}
+
 #--- Virtualenv ---
 .PHONY: brew_install_pyenv
 brew_install_pyenv: ## Install pyenv and pyenv-virtualenv
@@ -108,14 +114,16 @@ clean: ## Clean Up Virtual Environment
 	-pyenv uninstall -f ${VENV_NAME}
 
 #--- Install ---
+.PHONY: uninstall
+uninstall: ## Uninstall This Package
+	-${BIN_PIP} uninstall -y ${PACKAGE_NAME}
+
 .POHNY: install
-install: ## Install This Package via setup.py
-	${BIN_PIP} uninstall -y ${PACKAGE_NAME}
+install: uninstall ## Install This Package via setup.py
 	${BIN_PIP} install --ignore-installed .
 
 .PHONY: enstall
-enstall: ## Install This Package in Editable Mode
-	${BIN_PIP} uninstall -y ${PACKAGE_NAME}
+enstall: uninstall ## Install This Package in Editable Mode
 	${BIN_PIP} install --editable .
 
 #--- Test ---
@@ -127,10 +135,12 @@ test: install ## Run test
 .PHONY: cov
 cov: enstall ## Run Code Coverage test
 	${BIN_PIP} install pytest-cov
-	${BIN_PYTEST} tests -s --cov=${PACKAGE_NAME}
+	${BIN_PYTEST} tests -s --cov=${PACKAGE_NAME} --cov-report term --cov-report annotate:.coverage.annotate
+
 
 .PHONY: tox
 tox: ## Run tox
+	pip install tox
 	( \
 		pyenv local ${PY_VERSION} ${TEST_PY_VER2} ${TEST_PY_VER3} ${TEST_PY_VER4} ${TEST_PY_VER5}; \
 		tox; \
@@ -144,7 +154,10 @@ install_doc_deps: ## Install Library for building Docs
 
 .PHONY: init_doc
 init_doc: install_doc_deps ## Initialize Sphinx Documentation Library
-	${BIN_SPHINX_START}
+	{ \
+		cd docs; \
+		${BIN_SPHINX_START}; \
+	}
 
 .PHONY: build_doc
 build_doc: install_doc_deps install ## Build Documents, force Update

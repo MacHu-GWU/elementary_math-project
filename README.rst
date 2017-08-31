@@ -19,7 +19,19 @@
 
 Welcome to elementary_math Documentation
 ========================================
-This is just a example project for demonstration purpose.
+``elementary_math`` is a project to demonstrate: how to setup a fancy open source python library project on github includes these **powerful components**:
+
+- virtual environment setup (one command install everything)
+- setup.py file (one click **install**/**uninstall**)
+- auto Google stylize your code
+- fancy sphinx document (one click **build**/**view**/**deploy**)
+- unittest suits with pytest
+- code coverage test with coverall
+- multi python version test with tox
+- integration with https://travis-ci.org/
+- integration with https://coveralls.io/
+- auto deploy to `AWS S3 <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_
+- publish to `PyPI <https://pypi.python.org/pypi/<your-package>`_
 
 
 **Quick Links**
@@ -30,6 +42,21 @@ This is just a example project for demonstration purpose.
 - `Install <install_>`_
 - `Issue submit and feature request <https://github.com/MacHu-GWU/elementary_math-project/issues>`_
 - `API reference and source code <http://www.wbh-doc.com.s3.amazonaws.com/elementary_math/py-modindex.html>`_
+
+
+Usage
+-----
+1. Clone the repo.
+2. Navigate to ``elementary_math-project/start-a-project``, edit ``init_project.py`` and runt.
+3. A ``<repo-name>`` directory will be created, you can use this as your github repo directory.
+
+**For MacOS**:
+
+You have to make sure:
+
+- `HomeBrew <https://brew.sh/>`_ is installed.
+
+take a look at ``Makefile``, all magic happens here!
 
 
 .. _install:

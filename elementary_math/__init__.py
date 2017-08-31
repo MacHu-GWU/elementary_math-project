@@ -5,7 +5,7 @@
 Elementary Math Library. (For demonstration purpose only)
 """
 
-__version__ = "0.0.6"
+__version__ = "0.0.7"
 __short_description__ = "Elementary Mathematics."
 __license__ = "MIT"
 __author__ = "Sanhe Hu"
