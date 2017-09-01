@@ -31,7 +31,7 @@ Welcome to elementary_math Documentation
 - integration with https://travis-ci.org/
 - integration with https://coveralls.io/
 - auto deploy to `AWS S3 <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_
-- publish to `PyPI <https://pypi.python.org/pypi/<your-package>`_
+- publish to `PyPI <https://pypi.python.org/pypi/your-package-name>`_
 
 
 **Quick Links**
