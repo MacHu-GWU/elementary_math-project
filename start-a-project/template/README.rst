@@ -20,7 +20,7 @@
 Welcome to ``{{ package_name }}`` Documentation
 ==============================================================================
 
-This is just a example project for demonstration purpose.
+Documentation for ``{{ package_name }}``.
 
 
 Quick Links

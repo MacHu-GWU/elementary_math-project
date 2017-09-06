@@ -84,7 +84,7 @@ def initiate_project(
 
 if __name__ == "__main__":
     # --- EDIT THESE VARIABLE based on your own situation ---
-    package_name = "elementary_math"  # IMPORTANT
+    package_name = "picage"  # IMPORTANT
     repo_name = "{package_name}-project".format(package_name=package_name)
     python_version = "python%s%s" % (
     sys.version_info.major, sys.version_info.minor)

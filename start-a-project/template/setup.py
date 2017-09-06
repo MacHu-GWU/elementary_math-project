@@ -58,15 +58,25 @@ if __name__ == "__main__":
     except:
         MAINTAINER_EMAIL = None
 
-    # Include all sub packages in package directory
-    PACKAGES = [PKG_NAME] + ["%s.%s" % (PKG_NAME, i)
-                             for i in find_packages(PKG_NAME)]
+    PACKAGES, INCLUDE_PACKAGE_DATA, PACKAGE_DATA, PY_MODULES = (
+        None, None, None, None,
+    )
 
-    # Include everything in package directory
-    INCLUDE_PACKAGE_DATA = True
-    PACKAGE_DATA = {
-        "": ["*.*"],
-    }
+    # It's a directory style package
+    if os.path.exists(__file__[:-8] + PKG_NAME):
+        # Include all sub packages in package directory
+        PACKAGES = [PKG_NAME] + ["%s.%s" % (PKG_NAME, i)
+                                 for i in find_packages(PKG_NAME)]
+
+        # Include everything in package directory
+        INCLUDE_PACKAGE_DATA = True
+        PACKAGE_DATA = {
+            "": ["*.*"],
+        }
+
+    # It's a single script style package
+    elif os.path.exists(__file__[:-8] + PKG_NAME + ".py"):
+        PY_MODULES = [PKG_NAME, ]
 
     # The project directory name is the GitHub repository name
     repository_name = os.path.basename(os.path.dirname(__file__))
@@ -132,6 +142,7 @@ if __name__ == "__main__":
         packages=PACKAGES,
         include_package_data=INCLUDE_PACKAGE_DATA,
         package_data=PACKAGE_DATA,
+        py_modules=PY_MODULES,
         url=URL,
         download_url=DOWNLOAD_URL,
         classifiers=CLASSIFIERS,

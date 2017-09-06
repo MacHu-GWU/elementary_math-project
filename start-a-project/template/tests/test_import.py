@@ -3,10 +3,10 @@
 
 import pytest
 from pytest import raises, approx
-import {{ package_name }}
 
 
 def test():
+    import {{package_name}}
     pass
 
 
