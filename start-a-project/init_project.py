@@ -3,6 +3,8 @@
 
 """
 This script can generate automate scripts for open source python project.
+
+Scroll to ``if __name__ == "__main__":`` for more info.
 """
 
 from __future__ import print_function
@@ -10,19 +12,6 @@ import sys
 import datetime
 from os import walk, mkdir
 from os.path import join, abspath, dirname, basename
-
-
-#--- EDIT THESE VARIABLE based on your own situation ---
-package_name = "pathlib_mate" # IMPORTANT
-repo_name = "{package_name}-project".format(package_name=package_name)
-python_version = "python%s%s" % (sys.version_info.major, sys.version_info.minor)
-github_username = "MacHu-GWU" # IMPORTANT
-author_name = "Sanhe Hu" # IMPORTANT
-author_email = "husanhe@gmail.com" # IMPORTANT
-maintainer_name = author_name
-maintainer_email = author_email
-year = str(datetime.datetime.utcnow().year)
-s3_bucket = "www.wbh-doc.com" # IMPORTANT
 
 
 def write(s, path, encoding="utf-8"):
@@ -39,7 +28,18 @@ def read(path, encoding="utf-8"):
         return f.read().decode(encoding)
 
 
-def generate_files():
+def initiate_project(
+        package_name,
+        repo_name,
+        python_version,
+        github_username,
+        author_name,
+        author_email,
+        maintainer_name,
+        maintainer_email,
+        year,
+        s3_bucket,
+    ):
     """
     Generate project start files.
     """
@@ -81,5 +81,30 @@ def generate_files():
             write(content, dst)
     print("    Complete!")
 
+
 if __name__ == "__main__":
-    generate_files()
+    # --- EDIT THESE VARIABLE based on your own situation ---
+    package_name = "elementary_math"  # IMPORTANT
+    repo_name = "{package_name}-project".format(package_name=package_name)
+    python_version = "python%s%s" % (
+    sys.version_info.major, sys.version_info.minor)
+    github_username = "MacHu-GWU"  # IMPORTANT
+    author_name = "Sanhe Hu"  # IMPORTANT
+    author_email = "husanhe@gmail.com"  # IMPORTANT
+    maintainer_name = author_name
+    maintainer_email = author_email
+    year = str(datetime.datetime.utcnow().year)
+    s3_bucket = "www.wbh-doc.com"  # IMPORTANT
+
+    initiate_project(
+        package_name,
+        repo_name,
+        python_version,
+        github_username,
+        author_name,
+        author_email,
+        maintainer_name,
+        maintainer_email,
+        year,
+        s3_bucket,
+    )

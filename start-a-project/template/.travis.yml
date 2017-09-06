@@ -1,19 +1,24 @@
 language: python
+
 python:
   - "2.7"
   - "3.4"
   - "3.5"
   - "3.6"
+
 install:
   - pip install --editable . # Install it self
   - pip install --upgrade pytest # Upgrade pytest to lastest
   - pip install --upgrade pytest-cov # Upgrade pytest-cov to latest
-  - pip install coveralls # Install coverall
+  - pip install coveralls # Install coveralls
+
 script:
-  - pytest tests --cov={{ package_name }}
+  - pytest tests --cov={{ package_name }} # Run unittest
+
 notifications:
-  slack:
+  slack: # Mute email notification
     on_success: never
     on_failure: never
+
 after_success:
-  coveralls
+  coveralls # travis-ci will transfer data to coveralls after success

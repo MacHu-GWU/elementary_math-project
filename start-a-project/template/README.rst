@@ -17,13 +17,14 @@
     :target: https://github.com/{{ github_username }}/{{ repo_name }}
 
 
-Welcome to {{ package_name }} Documentation
-===========================================
+Welcome to ``{{ package_name }}`` Documentation
+==============================================================================
+
 This is just a example project for demonstration purpose.
 
 
-**Quick Links**
----------------
+Quick Links
+-----------
 - `GitHub Homepage <https://github.com/{{ github_username }}/{{ repo_name }}>`_
 - `Online Documentation <http://{{ s3_bucket }}.s3.amazonaws.com/{{ package_name }}/index.html>`_
 - `PyPI download <https://pypi.python.org/pypi/{{ package_name }}>`_

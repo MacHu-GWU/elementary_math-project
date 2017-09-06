@@ -17,9 +17,9 @@
     :target: https://github.com/MacHu-GWU/elementary_math-project
 
 
-Welcome to elementary_math Documentation
-========================================
-``elementary_math`` is a project to demonstrate: how to setup a fancy open source python library project on github includes these **powerful components**:
+Welcome to ``elementary_math`` Documentation
+============================================
+``elementary_math`` is a project to demonstrate: how to setup environment and toolsets for a python library project on github, includes these **powerful components**:
 
 - virtual environment setup (one command install everything)
 - setup.py file (one click **install**/**uninstall**)
@@ -34,8 +34,8 @@ Welcome to elementary_math Documentation
 - publish to `PyPI <https://pypi.python.org/pypi/your-package-name>`_
 
 
-**Quick Links**
----------------
+Quick Links
+-----------
 - `GitHub Homepage <https://github.com/MacHu-GWU/elementary_math-project>`_
 - `Online Documentation <http://www.wbh-doc.com.s3.amazonaws.com/elementary_math/index.html>`_
 - `PyPI download <https://pypi.python.org/pypi/elementary_math>`_
