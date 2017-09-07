@@ -64,37 +64,47 @@ USE_PYENV="Y"
 BUCKET_NAME="www.wbh-doc.com"
 
 #--- Derive Other Variable ---
-ifeq ($(USE_PYENV), "Y")
-    BIN_ACTIVATE="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin/activate"
-    BIN_PYTHON="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin/python"
-    BIN_PIP="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin/pip"
-    BIN_PYTEST="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin/pytest"
-    BIN_SPHINX_START="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin/sphinx-quickstart"
-    BIN_TWINE="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin/twine"
+# Windows
+ifeq (${OS}, Windows_NT)
+    DETECTED_OS := Windows
+    USE_PYENV="N"
 
+    BIN_DIR="./${VENV_NAME}/Scripts"
+    VENV_DIR_REAL="./${VENV_NAME}"
+    SITE_PACKAGES="./${VENV_NAME}/Lib/site-packages"
+
+    GLOBAL_PYTHON="/c/Python${PY_VER_MAJOR}${PY_VER_MINOR}/python.exe"
+    OPEN_COMMAND="start"
+# MacOS or Linux
+else
+
+ifeq ($(USE_PYENV), "Y")
+    BIN_DIR="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/bin"
     VENV_DIR_REAL="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}"
     VENV_DIR_LINK="${HOME}/.pyenv/versions/${VENV_NAME}"
-
-    SITE_PACKAGES="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/lib/python${PY_VER_MAJOR}.${PY_VER_MINOR}/site-packages"
+    SITE_PACKAGES="${VENV_DIR_REAL}/lib/python${PY_VER_MAJOR}.${PY_VER_MINOR}/site-packages"
 else
-    BIN_ACTIVATE="./${VENV_NAME}/bin/activate"
-    BIN_PYTHON="./${VENV_NAME}/bin/python"
-    BIN_PIP="./${VENV_NAME}/bin/pip"
-    BIN_PYTEST="./${VENV_NAME}/bin/pytest"
-    BIN_SPHINX_START="./${VENV_NAME}/bin/sphinx-quickstart"
-    BIN_TWINE="./${VENV_NAME}/bin/twine"
-
+    BIN_DIR="./${VENV_NAME}/bin"
     VENV_DIR_REAL="./${VENV_NAME}"
     VENV_DIR_LINK="./${VENV_NAME}"
-
-    SITE_PACKAGES="${HOME}/.pyenv/versions/${PY_VERSION}/envs/${VENV_NAME}/lib/python${PY_VER_MAJOR}.${PY_VER_MINOR}/site-packages"
+    SITE_PACKAGES="${VENV_DIR_REAL}/lib/python${PY_VER_MAJOR}.${PY_VER_MINOR}/site-packages"
 endif
+
+    GLOBAL_PYTHON="python${PY_VER_MAJOR}.${PY_VER_MINOR}"
+    OPEN_COMMAND="open"
+endif
+
+BIN_ACTIVATE="${BIN_DIR}/activate"
+BIN_PYTHON="${BIN_DIR}/python"
+BIN_PIP="${BIN_DIR}/pip"
+BIN_PYTEST="${BIN_DIR}/pytest"
+BIN_SPHINX_START="${BIN_DIR}/sphinx-quickstart"
+BIN_TWINE="${BIN_DIR}/twine"
 
 S3_PREFIX="s3://${BUCKET_NAME}/${PACKAGE_NAME}"
 DOC_URL="http://${BUCKET_NAME}.s3.amazonaws.com/${PACKAGE_NAME}/index.html"
 
 PY_VERSION="${PY_VER_MAJOR}.${PY_VER_MINOR}.${PY_VER_PATCH}"
-GLOBAL_PYTHON="python${PY_VER_MAJOR}.${PY_VER_MINOR}"
 
 
 .PHONY: help
@@ -150,6 +160,7 @@ ifeq (${USE_PYENV}, "Y")
 
 	-pyenv virtualenv ${VENV_NAME}
 else
+	echo
 	virtualenv -p ${GLOBAL_PYTHON} ${VENV_NAME}
 endif
 
@@ -243,7 +254,7 @@ clean_doc: ## Clean Existing Documents
 
 .PHONY: view_doc
 view_doc: ## Open Documents
-	open ./docs/build/html/index.html
+	${OPEN_COMMAND} ./docs/build/html/index.html
 
 
 .PHONY: reformat

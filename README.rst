@@ -16,6 +16,8 @@
 .. image:: https://img.shields.io/badge/Star_Me_on_GitHub!--None.svg?style=social
     :target: https://github.com/MacHu-GWU/elementary_math-project
 
+.. contents::
+
 
 Welcome to ``elementary_math`` Documentation
 ============================================
@@ -29,7 +31,7 @@ Welcome to ``elementary_math`` Documentation
 - code coverage test with coverall
 - multi python version test with tox
 - integration with https://travis-ci.org/
-- integration with https://coveralls.io/
+- integration with https://codecov.io/
 - auto deploy to `AWS S3 <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_
 - publish to `PyPI <https://pypi.python.org/pypi/your-package-name>`_
 
@@ -47,16 +49,71 @@ Quick Links
 Usage
 -----
 1. Clone the repo.
-2. Navigate to ``elementary_math-project/start-a-project``, edit ``init_project.py`` and runt.
+2. Navigate to ``elementary_math-project/start-a-project``, edit ``init_project.py`` and run it.
 3. A ``<repo-name>`` directory will be created, you can use this as your github repo directory.
+4. Take a look at ``Makefile``, all magic happens here!
 
-**For MacOS**:
 
+AWS Command Line (Optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use `AWS S3 <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_ to host your doc site is a good idea!
+
+We need `awscli <https://aws.amazon.com/cli/>`_ to automate the deployment.
+
+1. Install `awscli <https://aws.amazon.com/cli/>`_, just ``pip install awscli``.
+2. `Configure your API token <http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html>`_, just ``aws configure`` and follow the instruction.
+
+
+Config PyPI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you want to publish your package to `PyPI <https://pypi.python.org/pypi>`_ or `new PyPI <https://pypi.org/>`_, you need a pypi account and `Configure your credential <https://docs.python.org/2/distutils/packageindex.html#pypirc>`_.
+
+1. Create a ``${HOME}/.pypirc`` file.
+2. put these contents::
+
+    [distutils]
+    index-servers =
+        pypi
+
+    [pypi]
+    username:<username>
+    password:<password>
+
+
+For Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Because Windows doesn't have ``shell script`` and ``make`` command, so we have to install some third-party software to make it works.
+
+**Install Git Bash as shell emulator**
+
+1. `Download and install git <https://git-scm.com/downloads>`_.
+2. Now you can use ``C:\Program Files\Git\git-bash.exe`` like the terminal in MacOS/Linux.
+
+**Install MinGW**
+
+1. `Download and install <http://www.mingw.org/>`_, use the installer to install ``MinGW Base``.
+2. Find ``C:\MinGW\bin\mingw32-make.exe``, copy and paste and rename as ``C:\MinGW\bin\make.exe``.
+3. Add ``C:\MinGW\bin`` to $PATH (environment variable).
+
+Now you can use ``make <target>`` in ``git-bash.exe`` now.
+
+
+For MacOS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You have to make sure:
 
 - `HomeBrew <https://brew.sh/>`_ is installed.
 
-take a look at ``Makefile``, all magic happens here!
+There's two way of using virtualenv in MacOS:
+
+1. Use generic `virtualenv <https://virtualenv.pypa.io/en/stable/>`_.
+2. Use `pyenv <https://github.com/pyenv/pyenv>`_ + `pyenv-virtualenv <https://github.com/pyenv/pyenv-virtualenv>`_.
+
+I prefer ``pyenv`` + ``pyenv-virtualenv``, because it allows you:
+
+1. use tox to test against multiple python version locally before using cloud CI (continues integration).
+2. will not mess up your global python environment.
+3. the ``Makefile`` will do the ``pyenv`` + ``pyenv-virtualenv`` setup for you, just make sure that you have  `HomeBrew <https://brew.sh/>`_ installed.
 
 
 .. _install:

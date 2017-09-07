@@ -1,6 +1,8 @@
 # User Settings
-elementary_math.egg-info
-start-a-project/elementary_math-project
+elementary_math_venv/
+elementary_math.egg-info/
+elementary_math-*/
+start-a-project/*-project/
 *index.rst
 
 # Byte-compiled / optimized / DLL files
