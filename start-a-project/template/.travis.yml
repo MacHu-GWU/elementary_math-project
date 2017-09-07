@@ -10,7 +10,7 @@ install:
   - pip install --editable . # Install it self
   - pip install --upgrade pytest # Upgrade pytest to lastest
   - pip install --upgrade pytest-cov # Upgrade pytest-cov to latest
-  - pip install coveralls # Install coveralls
+  - pip install codecov # Install coveralls
 
 script:
   - pytest tests --cov={{ package_name }} # Run unittest
@@ -21,4 +21,4 @@ notifications:
     on_failure: never
 
 after_success:
-  coveralls # travis-ci will transfer data to coveralls after success
+  - codecov # travis-ci will transfer data to codecov after success

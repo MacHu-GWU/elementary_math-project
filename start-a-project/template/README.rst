@@ -1,8 +1,8 @@
 .. image:: https://travis-ci.org/{{ github_username }}/{{ repo_name }}.svg?branch=master
     :target: https://travis-ci.org/{{ github_username }}/{{ repo_name }}?branch=master
 
-.. image:: https://coveralls.io/repos/github/{{ github_username }}/{{ repo_name }}/badge.svg?branch=master
-    :target: https://coveralls.io/github/{{ github_username }}/{{ repo_name }}?branch=master
+.. image:: https://codecov.io/gh/{{ github_username }}/{{ repo_name }}/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/{{ github_username }}/{{ repo_name }}
 
 .. image:: https://img.shields.io/pypi/v/{{ package_name }}.svg
     :target: https://pypi.python.org/pypi/{{ package_name }}
