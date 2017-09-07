@@ -64,7 +64,7 @@ We need `awscli <https://aws.amazon.com/cli/>`_ to automate the deployment.
 2. `Configure your API token <http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html>`_, just ``aws configure`` and follow the instruction.
 
 
-Config PyPI
+Config PyPI (Optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If you want to publish your package to `PyPI <https://pypi.python.org/pypi>`_ or `new PyPI <https://pypi.org/>`_, you need a pypi account and `Configure your credential <https://docs.python.org/2/distutils/packageindex.html#pypirc>`_.
 
@@ -78,6 +78,14 @@ If you want to publish your package to `PyPI <https://pypi.python.org/pypi>`_ or
     [pypi]
     username:<username>
     password:<password>
+
+
+CI (Continues Integration) (Optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. `Test with travis-ci <https://docs.travis-ci.com/user/languages/python/>`_, basically you just need to:
+    - sign in using GitHub account.
+    - toggle on your repo.
+2. `Code Coverage Test with codecov <https://github.com/codecov/example-python>`_.
 
 
 For Windows
